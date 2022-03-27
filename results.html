@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#00ADEF" />
+		<title>النتائج</title>
+		<link rel="stylesheet" href="./css/normalize.css" />
+		<link rel="stylesheet" href="./css/result-style.css" />
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="./css/all.min.css" />
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/Logo.png"
+		/>
+	</head>
+	<body>
+		<!-- Start Header -->
+		<header id="header">
+			<div class="container">
+				<div class="img">
+					<img src="./images/Logo.png" alt="logo" />
+				</div>
+				<i class="fa-solid fa-bars" id="toggle"></i>
+				<ul class="main-nav">
+					<span class="close">X</span>
+					<li><a href="./index.html">الرئيسية</a></li>
+					<li>
+						<a href="./results.html">النتائج</a>
+					</li>
+					<!-- <li>
+						<a target="_blank" href="./index.html"
+							>الجداول الدراسية</a
+						>
+					</li> -->
+					<!-- <li>
+						<a target="_blank" href="./index.html">هيئة التدريس</a>
+					</li> -->
+					<li><a href="./index.html">رسالة المعهد</a></li>
+					<li><a href="./index.html">اتصل بنا</a></li>
+				</ul>
+			</div>
+		</header>
+		<!-- End Header -->
+		<!-- Start Content -->
+		<section class="content">
+			<div class="container">
+				<div class="form">
+					<form action="">
+						<label for="num">رقم الطالب :</label>
+						<input
+							id="num"
+							name="number"
+							type="text"
+							required
+							placeholder="اكتب رقم الطالب"
+						/>
+						<button type="submit">بحث</button>
+					</form>
+				</div>
+				<div class="table" id="show-hide">
+					<div>
+						<span class="item">اسم الطالب</span>
+						<span class="data">هشام طارق سيد</span>
+					</div>
+					<div>
+						<span class="item">رقم الجلوس</span>
+						<span class="data">555555</span>
+					</div>
+					<div>
+						<span class="item">الفرقة</span>
+						<span class="data">الرابعة</span>
+					</div>
+					<div>
+						<span class="item">الشعبة</span>
+						<span class="data">نظم معلومات ادارية</span>
+					</div>
+					<div>
+						<span class="item">مادة 1</span>
+						<span class="data">امتياز</span>
+					</div>
+					<div>
+						<span class="item">مادة 2</span>
+						<span class="data">جيد جدا</span>
+					</div>
+					<div>
+						<span class="item">مادة 3</span>
+						<span class="data">جيد جدا</span>
+					</div>
+					<div>
+						<span class="item">مادة 4</span>
+						<span class="data">جيد جدا</span>
+					</div>
+					<div>
+						<span class="item">مادة 5</span>
+						<span class="data">جيد جدا</span>
+					</div>
+					<div>
+						<span class="item">مادة 6</span>
+						<span class="data">جيد جدا</span>
+					</div>
+					<div>
+						<span class="item">التقدير العام</span>
+						<span class="data">جيد جدا</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Content -->
+		<!-- Start footer -->
+		<footer>
+			<div class="container">
+				<div class="copyright">
+					جميع الحقوق محفوظة &copy;
+					<span>المعهد العالى للعلوم الإدارية - بالقطامية</span> عام
+					2021 - 2022
+				</div>
+			</div>
+		</footer>
+		<!-- End footer -->
+		<script>
+			// full Screen nav in responsive
+			let toggler = document.querySelector("#toggle");
+			let nav = document.querySelector(".main-nav");
+			let close = document.querySelector(".close");
+			let link = document.querySelector("#link");
+			let a = document.querySelector("#link-a");
+			toggler.onclick = function () {
+				nav.classList.add("open");
+			};
+			close.onclick = function () {
+				this.parentElement.classList.remove("open");
+			};
+			link.onclick = function () {
+				nav.classList.remove("open");
+			};
+			a.onclick = function () {
+				nav.classList.remove("open");
+			};
+		</script>
+	</body>
+</html>

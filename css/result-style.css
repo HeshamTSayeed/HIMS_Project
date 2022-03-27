@@ -1,0 +1,326 @@
+/* Start Global Rules */
+:root {
+	--main-color: #00adef;
+	--main-transition: 0.5s;
+	--main-padding: 50px 0;
+	--section-background: #dfdfdf;
+	--secondary-color: #2d313e;
+}
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	transition: all var(--main-transition) linear;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	font-family: "Cairo", sans-serif;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+/* Start Customize Scrollbar */
+::-webkit-scrollbar {
+	width: 10px;
+}
+::-webkit-scrollbar-track {
+	background-color: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--main-color);
+	border-radius: 40px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: #00abef94;
+}
+/*End Customize Scrollbar */
+.container {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.main-title {
+	font-size: 30px;
+	margin: 0 auto 80px;
+	position: relative;
+	width: fit-content;
+	color: var(--secondary-color);
+}
+.main-title::before {
+	content: "";
+	position: absolute;
+	bottom: -8px;
+	left: 0;
+	height: 4px;
+	width: 70%;
+	border-radius: 5px;
+	background-color: var(--main-color);
+}
+/* Small */
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+/* Medium */
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+/* Large */
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+/* Start Header */
+#toggle {
+	display: none;
+}
+span.close {
+	display: none;
+}
+header {
+	background-color: var(--secondary-color);
+	box-shadow: 0 0 10px #000;
+}
+header .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	position: relative;
+}
+@media (max-width: 767px) {
+	header .container {
+		padding: 0 10px;
+		margin: 0;
+	}
+}
+header .img {
+	width: 85px;
+}
+header img {
+	max-width: 100%;
+	width: 100%;
+}
+header .main-nav {
+	display: flex;
+}
+header .main-nav > li > a {
+	height: 85px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 30px;
+	color: #ffffff;
+	transition: var(--main-transition);
+	overflow: hidden;
+}
+header .main-nav > li > a::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: -100%;
+	width: 100%;
+	height: 4px;
+	transition: var(--main-transition);
+	background-color: var(--main-color);
+}
+header .main-nav > li > a:hover {
+	background-color: #fafafa30;
+	color: var(--main-color);
+}
+header .main-nav > li > a:hover::before {
+	left: 0;
+}
+@media (max-width: 767px) {
+	#toggle {
+		display: block;
+		color: #ffffff;
+		font-size: 25px;
+		cursor: pointer;
+	}
+	#toggle:hover {
+		color: var(--main-color);
+	}
+	.main-nav {
+		position: fixed;
+		z-index: 99999;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgb(0 0 0 / 95%);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		transform: translateY(-100%);
+	}
+	.main-nav.open {
+		transform: translateY(0);
+	}
+	.main-nav .close {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		color: white;
+		border: 2px solid white;
+		width: 50px;
+		height: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 30px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+	.main-nav .close:hover {
+		color: indianred;
+		border-color: indianred;
+	}
+	.main-nav li a {
+		color: #ffffff;
+		text-decoration: none;
+		font-size: 35px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+/* End Header */
+/* Start Content */
+section.content {
+	padding: var(--main-padding);
+	background-color: var(--section-background);
+}
+section.content .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 30px;
+}
+section.content .form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+section.content .form form label {
+	font-size: 30px;
+	margin-left: 20px;
+	font-weight: bold;
+}
+@media (max-width: 767px) {
+	section.content .form form label {
+		font-size: 22px;
+	}
+}
+section.content .form form input {
+	padding: 15px 10px;
+	width: 300px;
+	outline: none;
+	border-radius: 10px;
+	border: 1px solid var(--secondary-color);
+	background-color: var(--section-background);
+	font-size: 22px;
+}
+@media (max-width: 767px) {
+	section.content .form form input {
+		font-size: 20px;
+		width: 200px;
+		padding: 12px 10px;
+	}
+}
+section.content .form form input::placeholder {
+	font-size: 20px;
+	color: #333;
+	opacity: 0.5;
+}
+@media (max-width: 767px) {
+	section.content .form form input::placeholder {
+		font-size: 20px;
+	}
+}
+section.content .form button {
+	padding: 15px 5px;
+	width: 200px;
+	display: block;
+	margin: 50px auto;
+	font-size: 22px;
+	font-weight: bold;
+	border: 2px solid var(--main-color);
+	border-radius: 30px;
+	color: var(--main-color);
+	background-color: transparent;
+	cursor: pointer;
+}
+section.content .form button:hover {
+	background-color: var(--main-color);
+	color: var(--section-background);
+}
+section.content .table {
+	display: grid;
+	grid-template-columns: auto auto;
+}
+section.content .table div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 2px solid var(--secondary-color);
+	border-bottom: none;
+}
+section.content .table div:nth-child(1),
+section.content .table div:nth-child(3),
+section.content .table div:nth-child(5),
+section.content .table div:nth-child(7),
+section.content .table div:nth-child(9) {
+	border-left: none;
+}
+section.content .table div:last-child {
+	justify-content: space-around;
+	border-bottom: 2px solid var(--secondary-color);
+	grid-column: 1 / span 2;
+}
+section.content .table span {
+	display: inline-block;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 20px 10px;
+}
+/* End Content */
+/* Start Footer */
+footer {
+	padding: var(--main-padding);
+	background-color: var(--secondary-color);
+}
+footer .container {
+	display: flex;
+	justify-content: center;
+}
+footer .container .copyright {
+	font-size: 20px;
+	font-weight: bold;
+	color: var(--section-background);
+}
+@media (max-width: 767px) {
+	footer .container .copyright {
+		font-size: 14px;
+		font-weight: normal;
+		text-align: center;
+		line-height: 1.7;
+	}
+}
+footer .container .copyright span {
+	color: var(--main-color);
+}
+/* End Footer */
